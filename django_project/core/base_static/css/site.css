@@ -5372,10 +5372,10 @@ a.badge:focus {
 .thumbnail {
   display: block;
   padding: 4px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   line-height: 1.42857143;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 0px solid #ddd;
   border-radius: 4px;
   -webkit-transition: border 0.2s ease-in-out;
   -o-transition: border 0.2s ease-in-out;
@@ -5832,7 +5832,7 @@ button.list-group-item-danger.active:focus {
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 16px;
+  font-size: 20px;
   color: inherit;
 }
 .panel-title > a,
@@ -9345,4 +9345,32 @@ p.login-signup {
 }
 label.required:after {
   content: "*";
+}
+.pinaxcon-list .panel-title {
+  padding: 15px 20px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid;
+  border-color: #ddd;
+  font-weight: 500;
+}
+.pinaxcon-list li {
+  list-style-type: none;
+  position: relative;
+  margin-bottom: 1px;
+}
+.pinaxcon-list h4 {
+  font-size: 16px;
+}
+.pinaxcon-list li:before {
+  content: "\f02b"; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  margin-left: -1.5em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+  position: absolute;
+  margin-top: 10px;
+}
+.pinaxcon-list .thumbnail {
+  padding: 2px;
+  margin-bottom: 1px;
+  margin-left: 5px;
 }

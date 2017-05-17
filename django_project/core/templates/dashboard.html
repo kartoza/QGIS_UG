@@ -164,7 +164,9 @@
     </div>
     {% endif %}
 
+    <div class="pinaxcon-list">
     {% pinaxcon_list_products "span2" 40 %}
+    </div>
 
     {% available_teams as available_teams %}
     {% if user.memberships.exists or available_teams %}
