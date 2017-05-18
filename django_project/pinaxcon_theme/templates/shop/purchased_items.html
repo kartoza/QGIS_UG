@@ -5,6 +5,32 @@
     <title>Title</title>
 </head>
 <body>
+    {% for order in orders %}
+    <table>
+        <thead>
+            <td>
+                SKU
+            </td>
+            <td>
+                Description
+            </td>
+            <td>
+                Quantity
+            </td>
+            <td>
+                Unit Price
+            </td>
+            <td>
+                Total Price
+            </td>
+        </thead>
+        <tbody>
+            {% for item in order.items.all %}
+                {{ item.description }}
+            {% endfor %}
+        </tbody>
 
+    </table>
+    {% endfor %}
 </body>
 </html>

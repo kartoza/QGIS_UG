@@ -45,6 +45,7 @@ urlpatterns = i18n_patterns(
     url(r"^reviews/", include("symposion.reviews.urls")),
     url(r"^schedule/", include("symposion.schedule.urls")),
     url("^shop/", include("cartridge.shop.urls")),
+    url("^history/",include("pinaxcon_theme.urls")),
     url("^account/orders/$", order_history, name="shop_order_history"),
     url("^social/", include('social_django.urls', namespace='social')),
     url("^payment/", include("payment.urls")),
