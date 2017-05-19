@@ -1,36 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    {% for order in orders %}
-    <table>
-        <thead>
-            <td>
-                SKU
-            </td>
-            <td>
-                Description
-            </td>
-            <td>
-                Quantity
-            </td>
-            <td>
-                Unit Price
-            </td>
-            <td>
-                Total Price
-            </td>
-        </thead>
-        <tbody>
-            {% for item in order.items.all %}
-                {{ item.description }}
-            {% endfor %}
-        </tbody>
+{% extends "shop/base.html" %}
+{% load mezzanine_tags shop_tags i18n %}
 
-    </table>
+{% block meta_title %}{% trans "Your Purchase History" %}{% endblock %}
+{% block title %}{% trans "Your Purchase History" %}{% endblock %}
+{% block body_id %}cart{% endblock %}
+
+{% block breadcrumb_menu %}
+{{ block.super }}
+<li>{% trans "Your Purchase History" %}</li>
+{% endblock %}
+
+{% block main %}
+    {% for order in orders %}
+        <div class="table-responsive">
+            <h2>Order No # {{ order.id }} ({% if not order.status %}
+                Processed
+                {% else %}
+                Unprocessed
+                {% endif %}
+                )</h2>
+            <table class="table">
+                <thead>
+                    <td>
+                        SKU
+                    </td>
+                    <td width="40%">
+                        Description
+                    </td>
+                    <td>
+                        Quantity
+                    </td>
+                    <td>
+                        Unit Price
+                    </td>
+                    <td>
+                        Total Price
+                    </td>
+                </thead>
+                <tbody>
+                    {% for item in order.items.all %}
+                        <tr>
+                            <td>
+                                {{ item.sku }}
+                            </td>
+                            <td>
+                                {{ item.description }}
+                            </td>
+                            <td>
+                                {{ item.quantity }}
+                            </td>
+                            <td>
+                                {{ item.unit_price }}
+                            </td>
+                            <td>
+                                {{ item.total_price }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+
     {% endfor %}
-</body>
-</html>
+{% endblock %}
