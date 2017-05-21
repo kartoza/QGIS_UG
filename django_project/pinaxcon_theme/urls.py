@@ -4,5 +4,5 @@ from django.conf.urls import patterns, url
 
 urlpatterns = patterns(
     "pinaxcon_theme.views",
-    url(r"^purchased_items/$", "purchased_items", name="purchased_items"),
+    url(r"^purchased-items/$", "purchased_items", name="purchased_items"),
 )
