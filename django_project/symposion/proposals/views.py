@@ -58,7 +58,7 @@ def proposal_submit(request):
         messages.info(request, _("To submit a proposal, please "
                                  "<a href='{0}'>log in</a> and create a speaker profile "
                                  "via the dashboard.".format(settings.LOGIN_URL)))
-        return redirect("home")  # @@@ unauth'd speaker info page?
+        return redirect("/account/login/?next=/proposals/submit")  # @@@ unauth'd speaker info page?
     else:
         try:
             request.user.speaker_profile
