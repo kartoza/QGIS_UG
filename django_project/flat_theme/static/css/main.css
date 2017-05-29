@@ -214,6 +214,9 @@ body > section {
 .asbestos h6 {
   color: #fff;
 }
+.emerald h1 {
+  text-transform: uppercase;
+}
 .turquoise small,
 .green-sea small,
 .sun-flower small,
@@ -248,7 +251,8 @@ body > section {
   background-color: #f39c12;
 }
 .emerald {
-  background-color: #2ecc71;
+  background-color: #2b542c;
+  opacity: 0.8;
 }
 .nephritis {
   background-color: #27ae60;
